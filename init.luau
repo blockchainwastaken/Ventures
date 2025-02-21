@@ -6,7 +6,7 @@ getgenv().checkfun = function(func)
 	else
 		local result = func()
 
-		if result == "jPvLSNhNUZ" then
+		if result == "9pNB9uCiSd" then
 			warn("Massive nigga")
 		else
 			game.Players.LocalPlayer:Kick("Good luck skidder V2")
