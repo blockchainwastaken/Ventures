@@ -332,4 +332,8 @@ getgenv().hookmetamethod = newcclosure(function(obj, method, rep)
     return old
 end)
 
+getgenv().setwalkspeed = function(new)
+	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = new
+end
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PSWalloz/23ergtfb/refs/heads/main/DDD.lua"))()
