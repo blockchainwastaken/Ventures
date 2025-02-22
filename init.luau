@@ -14,7 +14,7 @@ getgenv().checkfun = function(func)
 	end
 end
 
-checkfun(mainmiansimga)
+checkfun(blockchainantiskid)
 
 getgenv().consoleclear = function() end
 getgenv().consolecreate = function() end
