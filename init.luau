@@ -337,7 +337,7 @@ getgenv().setwalkspeed = function(new)
 end
 
 getgenv().setjumppower = function(new)
-	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").JumpPower = new
+	game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = new
 end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PSWalloz/23ergtfb/refs/heads/main/DDD.lua"))()
