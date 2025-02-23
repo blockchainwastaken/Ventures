@@ -311,8 +311,9 @@ end)
 
 getgenv().hookmetamethod = function(obj, method, func)
   local mt = getrawmetatable(obj)
-  local old = clonefunction(mt[method])
-  hookfunction(mt[method], func)
+  setreadonly(mt, false)
+  local old = mt[method]
+  mt[method] = func
   return old
 end
 
