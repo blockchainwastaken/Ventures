@@ -308,7 +308,7 @@ getgenv().require = newcclosure(function(v)
         return res
     end
 end)
-
+--[[
 getgenv().hookmetamethod = newcclosure(function(obj, method, rep)
     local mt = getrawmetatable(obj)
     local old = mt[method]
@@ -323,6 +323,7 @@ getgenv().hookmetamethod = newcclosure(function(obj, method, rep)
     
     return old
 end)
+]]
 
 getgenv().setwalkspeed = function(new)
 	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = new
