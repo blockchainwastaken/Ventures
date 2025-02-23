@@ -16,14 +16,6 @@ end
 
 checkfun(blockchainantiskid)
 
-getgenv().consoleclear = function() end
-getgenv().consolecreate = function() end
-getgenv().consoledestroy = function() end
-getgenv().consoleinput = function() end
-getgenv().consoleprint = function() end
-getgenv().consolesettitle = function() end
-getgenv().rconsolename = function() end
-
 local testdebug = table.clone(debug)
 
 testdebug.getconstant = getgenv().getconstant
