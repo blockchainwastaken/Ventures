@@ -309,16 +309,12 @@ getgenv().require = newcclosure(function(v)
     end
 end)
 
-getgenv().hookmetamethod = newcclosure(function(obj, method, rep)
-    local mt = getrawmetatable(obj)
-    local old = mt[method]
-
-    if(iscclosure(old) == false) then
-             rep = newcclosure(rep)
-    end
-    hookfunction(mt[method], rep)
-    return old
-end)
+getgenv().hookmetamethod = function(obj, method, func)
+  local mt = getrawmetatable(obj)
+  local old = clonefunction(mt[method])
+  hookfunction(mt[method], func)
+  return old
+end
 
 getgenv().setwalkspeed = function(new)
 	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = new
@@ -330,6 +326,7 @@ end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PSWalloz/23ergtfb/refs/heads/main/DDD.lua"))()
 
+warn("UPDATE V2")
 game:GetService("StarterGui"):SetCore("SendNotification",{
     Title = "KAKA",
     Icon = "rbxassetid://1",
