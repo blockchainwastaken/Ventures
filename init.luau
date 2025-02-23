@@ -327,7 +327,7 @@ end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PSWalloz/23ergtfb/refs/heads/main/DDD.lua"))()
 
-warn("UPDATE V2")
+warn("UPDATE V23")
 game:GetService("StarterGui"):SetCore("SendNotification",{
     Title = "KAKA",
     Icon = "rbxassetid://1",
