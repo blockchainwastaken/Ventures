@@ -311,16 +311,12 @@ end)
 
 getgenv().hookmetamethod = newcclosure(function(obj, method, rep)
     local mt = getrawmetatable(obj)
-    local old = mt[method]
-    
+    local old = clonefunction(mt[method])
+
     if(iscclosure(old) == false) then
              rep = newcclosure(rep)
     end
-
-    setreadonly(mt, false)
-    mt[method] = rep
-    setreadonly(mt, true)
-    
+    hookfunction(mt[method], rep)
     return old
 end)
 
