@@ -31,6 +31,14 @@ getgenv().crypt.hash = getgenv().hash
 setreadonly(getgenv().base64, true)
 setreadonly(getgenv().crypt, true)
 
+getgenv().setthreadidentity = function(identity: number): ()
+    kakaidentity(identity)
+    task.wait()
+end
+
+getgenv().setidentity = getgenv().setthreadidentity
+getgenv().setthreadcontext = getgenv().setthreadidentity
+
 getgenv().decompile = function(script)
     httpresponse = request({
       Url = "http://45.137.205.175:9002",
