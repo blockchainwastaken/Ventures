@@ -39,6 +39,7 @@ end
 getgenv().setidentity = getgenv().setthreadidentity
 getgenv().setthreadcontext = getgenv().setthreadidentity
 
+--[[
 getgenv().decompile = function(script)
     httpresponse = request({
       Url = "http://45.137.205.175:9002",
@@ -50,4 +51,4 @@ getgenv().decompile = function(script)
     })
     return httpresponse.Body
 end
-
+]]
