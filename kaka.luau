@@ -1,3 +1,5 @@
+if not game:IsLoaded() then game.Loaded:Wait() end
+
 getgenv().http = {}
 getgenv().http.request = request
 setreadonly(http, true)
